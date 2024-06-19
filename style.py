@@ -15,7 +15,6 @@ class Style(JsonContainer):
     def add_visitor(self, visitor):
         visitor.visit(self)
 
-
 class TreeStyle(Style):
     def draw(self, prefix='', max_length=0):
         line = f"{prefix}├─ {self.icon_factory.get_icon()} {self.name} "
@@ -29,7 +28,6 @@ class TreeStyle(Style):
         new_prefix = prefix + "   "
         for i, child in enumerate(self.children):
             child.draw(new_prefix, 0)
-
 
 class RectangleStyle(Style):
     def draw(self, prefix='', max_length=0):
@@ -46,4 +44,5 @@ class RectangleStyle(Style):
             child.draw(new_prefix, max_length)
         if self.level == 0 and len(self.children) > 0:
             print("└" + "─" * (max_length - 2) + "┘")
+
 

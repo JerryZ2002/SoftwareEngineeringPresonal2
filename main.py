@@ -14,8 +14,5 @@ def main():
             explorer.show(json_file)
             print()
 
-
 if __name__ == "__main__":
     main()
-
-

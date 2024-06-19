@@ -17,19 +17,15 @@ class IconFactory:
         else:
             raise ValueError(f"Unknown icon family: {self.icon_family}")
 
-
 class AbstractStyleFactory:
     @abstractmethod
     def create_container(self, icon_factory, name, level):
         pass
 
-
 class TreeStyleFactory(AbstractStyleFactory):
     def create_container(self, icon_factory, name, level):
         return TreeStyle(icon_factory, name, level)
 
-
 class RectangleStyleFactory(AbstractStyleFactory):
     def create_container(self, icon_factory, name, level):
         return RectangleStyle(icon_factory, name, level)
-

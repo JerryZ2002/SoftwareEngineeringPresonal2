@@ -11,8 +11,6 @@ class JsonComponent(ABC):
     def add_visitor(self, visitor):
         pass
 
-
-
 class Leaf(JsonComponent):
     def __init__(self, name, icon=None):
         self.name = name
@@ -25,7 +23,6 @@ class Leaf(JsonComponent):
 
     def add_visitor(self, visitor):
         visitor.visit(self)
-
 
 class JsonContainer(JsonComponent, metaclass=ABCMeta):
     def __init__(self, name, level):

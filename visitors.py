@@ -7,3 +7,4 @@ class JsonVisitor:
 
     def visit(self, component):
         component.draw(max_length=self.max_length)
+
